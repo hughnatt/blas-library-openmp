@@ -42,7 +42,7 @@ void mn_dotc_test_all(){
         experiments[exp] = end - start;
     }
     av = average(experiments);
-    printf("Sequential CDot: r %5.2f %5.2f \t\t %Ld cycles\n",r.re,r.im, av - residu);
+    printf("Sequential Dotc: r %5.2f %5.2f \t\t %Ld cycles\n",r.re,r.im, av - residu);
 
     for (exp = 0; exp < NBEXPERIMENTS; exp++)
     {
@@ -52,7 +52,7 @@ void mn_dotc_test_all(){
         experiments[exp] = end - start;
     }
     av = average(experiments);
-    printf("OMP Static Cdot: r %5.2f %5.2f \t\t %Ld cycles\n",r.re,r.im, av - residu);
+    printf("OMP Static Dotc: r %5.2f %5.2f \t\t %Ld cycles\n",r.re,r.im, av - residu);
 
     for (exp = 0; exp < NBEXPERIMENTS; exp++)
     {
@@ -62,7 +62,7 @@ void mn_dotc_test_all(){
         experiments[exp] = end - start;
     }
     av = average(experiments);
-    printf("OMP Static Unrolled Cdot: r %5.2f %5.2f \t %Ld cycles\n",r.re,r.im, av - residu);
+    printf("OMP Static Unrolled Dotc: r %5.2f %5.2f \t %Ld cycles\n",r.re,r.im, av - residu);
 
     for (exp = 0; exp < NBEXPERIMENTS; exp++)
     {
@@ -72,7 +72,7 @@ void mn_dotc_test_all(){
         experiments[exp] = end - start;
     }
     av = average(experiments);
-    printf("Vectored Cdot: r %5.2f %5.2f \t\t %Ld cycles\n",r.re,r.im, av - residu);
+    printf("Vectored Dotc: r %5.2f %5.2f \t\t %Ld cycles\n",r.re,r.im, av - residu);
 
     for (exp = 0; exp < NBEXPERIMENTS; exp++)
     {
@@ -82,5 +82,5 @@ void mn_dotc_test_all(){
         experiments[exp] = end - start;
     }
     av = average(experiments);
-    printf("Vectored OMP CDot: r %5.2f %5.2f \t\t %Ld cycles\n",r.re,r.im, av - residu);
+    printf("Vectored OMP Dotc: r %5.2f %5.2f\t\t %Ld cycles\n",r.re,r.im, av - residu);
 }

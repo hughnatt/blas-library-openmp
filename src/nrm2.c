@@ -67,9 +67,7 @@ float mncblas_snrm2_3(const int n, const float *x, const int incX)
     register unsigned int i;
     float tmp[4] __attribute__((aligned(16))) ;
     
-
     __m128 v1, res;
-#pragma omp parallel for schedule(static) reduction(+:nrm)
     for (i = 0; i < n; i += 4)
     {   
         v1 = _mm_load_ps(&x[i]);
@@ -89,6 +87,7 @@ float mncblas_snrm2_4(const int n, const float *x, const int incX)
     
 
     __m128 v1, res;
+#pragma omp parallel for schedule(static) reduction(+:nrm) reduction(+:tmp)
     for (i = 0; i < n; i += 4)
     {   
         v1 = _mm_load_ps(&x[i]);

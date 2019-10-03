@@ -1,2 +1,2 @@
 # blas-library-openmp
-Optimization of our custom blas-library using OpenMP (Parallelism) and Intel Intrinsics (SSEx Vectorization)
+Optimization of our custom [blas-library](github.com/hughnatt/blas-library) using OpenMP (Parallelism) and Intel Intrinsics (SSEx Vectorization)
